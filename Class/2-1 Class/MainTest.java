@@ -1,28 +1,27 @@
-// 지금부터 클래스를 정의 할꺼야
-class Car {
-    // Data + Function
-    // Data -> Member variable (멤버 변수)
-    String name;
 
-    // Function -> Member method (멤버 메서드)
-    void prtName() {
-        System.out.println(name);
+
+// 붕어빵 클래스 (붕어빵을 만들기 위한 설계도)
+class Bungeoppang {
+    String filling; // 속 재료 (팥, 크림 등)
+
+    // 생성자: 붕어빵 속을 설정
+    Bungeoppang(String filling) {
+        this.filling = filling;
+    }
+
+    // 붕어빵 정보 출력
+    void printInfo() {
+        System.out.println("이 붕어빵의 속은 " + filling + "입니다.");
     }
 
 }
-
+// 붕어빵 객체 생성 및 사용
 public class MainTest {
     public static void main(String[] args) {
+        Bungeoppang redBean = new Bungeoppang("팥"); // 팥 붕어빵 생성
+        Bungeoppang cream = new Bungeoppang("크림");  // 크림 붕어빵 생성
 
-        int bar[] = new int[5];
-
-        Car car1 = new Car();
-        Car car2 = new Car();
-
-        car2.name = "Tesla";
-
-        car2.prtName();
-
-
+        redBean.printInfo();    // "이 붕어빵의 속은 팥입니다."
+        cream.printInfo();      // "이 붕어빵의 속은 크림입니다."
     }
 }
