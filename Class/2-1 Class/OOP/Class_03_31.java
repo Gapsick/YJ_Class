@@ -40,17 +40,6 @@ class Student {
         return true;
     }
 
-    int getScoreKorean() {
-        return scoreKorean;
-    }
-
-    int getScoreEnglish() {
-        return scoreEnglish;
-    }
-
-    public int getScoreMath() {
-        return scoreMath;
-    }
 
     int getSum() {
         sum = scoreKorean + scoreEnglish + scoreMath;
