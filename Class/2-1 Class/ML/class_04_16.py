@@ -1,7 +1,7 @@
 import numpy as np
 
 num_features = 3
-num_samples = 2
+num_samples = 1000
 
 np.random.seed(1)
 np.set_printoptions(suppress=True, precision=3)
