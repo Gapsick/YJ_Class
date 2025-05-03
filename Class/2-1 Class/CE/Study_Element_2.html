@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 조회 및 설정</title>
+</head>
+<body>
+    <h1 id="title" data-topic="dom">안녕하세요</h1>
+    <p id="desc">DOM 조작 예제입니다.</p>
+
+    <script>
+        // 요소 조회
+        const heading = document.getElementById("title");
+        const desc = document.querySelector("#desc");
+
+        // 속성 값 조회
+        console.log("ID:", heading.getAttribute("id"));
+        console.log("data-topic:", heading.getAttribute("data-topic"));
+
+        // 새로운 속성 추가
+        heading.setAttribute("data-role", "heading");
+        desc.setAttribute("title", "마우스를 올리면 나옵니다");
+    </script>
+
+
+</body>
+</html>

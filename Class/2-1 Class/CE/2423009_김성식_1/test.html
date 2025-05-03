@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <h2>정보 입력</h2>
+
+    <form id="infoForm">
+        <label>이름: <input type="text" id="name" required></label><br><br>
+        <label>나이: <input type="number" id="age" required></label><br><br>
+        <label>전화번호: <input type="tel" id="phone" required></label><br><br>
+        <button type="submit">저장</button>
+    </form>
+
+    <br><br>
+
+    <table border="1">
+        <thead>
+            <th>이름</th>
+            <th>나이</th>
+            <th>전화번호</th>
+            <th>수정</th>
+            <th>삭제</th>
+        </thead>
+        <tbody id="output">
+
+        </tbody>
+    </table>
+
+    <br><br>
+
+    <form id="editForm" style="display: none;">
+        <h2>정보 수정</h2>
+        <label>이름: <input type="text" id="editName" required></label><br><br>
+        <label>나이: <input type="number" id="editAge" required></label><br><br>
+        <label>전화번호: <input type="tel" id="editPhone" required></label><br><br>
+        <button id="editSubmit" type="button">저장</button>
+    </form>
+
+    <script>
+        const form = document.getElementById("infoForm");
+        const output = document.getElementById("output");
+
+        let editTarget = null;
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+            const phone = document.getElementById("phone").value;
+
+            const entry = document.createElement("tr");
+            entry.classList.add("entry");
+
+            entry.innerHTML=`
+            <td>${name}</td>
+            <td>${age}</td>
+            <td>${phone}</td>
+            <td><button class=edit-btn>수정</button></td>
+            <td><button class=delete-btn>삭제</button></td>
+            `;
+
+            // 삭제 버튼 연결
+            const deleteBtn = entry.querySelector(".delete-btn");
+            deleteBtn.addEventListener("click", () => {
+                entry.remove();
+            })
+
+            // 수정 버튼 연결
+            const editBtn = entry.querySelector(".edit-btn");
+            editBtn.addEventListener("click", () => {
+                const cell = entry.children;
+                document.getElementById("editName").value = cell[0].textContent;
+                document.getElementById("editAge").value = cell[1].textContent;                
+                document.getElementById("editPhone").value = cell[2].textContent;
+
+                editTarget = entry;
+                document.getElementById("editForm").style.display="block";
+            })
+
+            output.appendChild(entry);
+            form.reset();
+        })
+
+        // 수정 저장
+        document.getElementById("editSubmit").addEventListener("click", () => {
+            if (!editTarget) return;
+        
+            const name = document.getElementById("editName").value;        
+            const age = document.getElementById("editAge").value;            
+            const phone = document.getElementById("editPhone").value;
+            
+            const cells = editTarget.children;
+            cells[0].textContent = name;
+            cells[1].textContent = age;
+            cells[2].textContent = phone;
+
+            // 초기화
+            editTarget = null;
+            document.getElementById("editForm").style.display="none";
+        })
+    </script>
+</body>
+</html>

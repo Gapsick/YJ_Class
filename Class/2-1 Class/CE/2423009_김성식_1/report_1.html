@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>정보 입력</h2>
+
+    <!-- 정보 입력 -->
+    <form id="infoForm">
+        <label>
+            이름:
+            <input type="text" id="name" required>
+        </label><br><br>
+
+        <label>
+            나이:
+            <input type="number" id="age" required>
+        </label><br><br>
+
+        <label>
+            전화번호:
+            <input type="tel" id="phone" required>
+        </label><br><br>
+
+        <button type="submit">제출</button>
+    </form>
+
+    <br><br>
+
+    <!-- 출력 Table -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>나이</th>
+                <th>전화번호</th>
+                <th>수정</th>
+                <th>삭제</th>
+            </tr>
+        </thead>
+        <tbody id="output">
+
+        </tbody>
+    </table>
+
+    <br><br>
+
+    <!-- 정보 수정 -->
+    <div id="editbox" style="display: none">
+        <h2>정보 수정</h2>
+        <label>
+            이름:
+            <input type="text" id="editName">
+        </label><br><br>
+        <label>
+            나이:
+            <input type="number" id="editAge">
+        </label><br><br>
+        <label>
+            전화번호:
+            <input type="tel" id="editPhone">
+        </label><br><br>
+
+        <button id="editSubmit">수정</button>
+
+    </div>
+
+    <script>
+        const form = document.getElementById("infoForm");
+        const output = document.getElementById("output");
+
+        let editTarget = null;
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const age = Number(document.getElementById("age").value);
+            const phone = document.getElementById("phone").value;
+
+            // 나이 유효성 검사 추가
+            if (age <= 0 || age > 100) {
+                alert("나이는 0이상 100이하만");
+                return;
+            }
+
+            const entry = document.createElement("tr");
+            entry.classList.add("entry");
+
+            entry.innerHTML=`
+            <td>${name}</td>
+            <td>${age}</td>
+            <td>${phone}</td>
+            <td><button class=edit-btn>수정</button></td>
+            <td><button class="delete-btn">삭제</button></td>
+            `;
+
+            // 삭제 버튼 이벤트 연결
+            const deleteBtn = entry.querySelector(".delete-btn")
+            deleteBtn.addEventListener("click", () => {
+                entry.remove();
+            })
+            
+            // 수정 버튼 이벤트 연결
+            const editBtn = entry.querySelector(".edit-btn")
+            editBtn.addEventListener("click", () => {
+                const cells = entry.children;
+                document.getElementById("editName").value = cells[0].textContent;
+                document.getElementById("editAge").value = cells[1].textContent;
+                document.getElementById("editPhone").value = cells[2].textContent;
+
+                editTarget = entry;
+                document.getElementById("editbox").style.display="block";
+            })
+
+            output.appendChild(entry);
+
+            form.reset();
+        })
+
+        // 수정 저장
+        document.getElementById("editSubmit").addEventListener("click", () => {
+            if (!editTarget) return;
+
+            const name = document.getElementById("editName").value;
+            const age = document.getElementById("editAge").value;
+            const phone = document.getElementById("editPhone").value;
+
+            if (age <= 0 || age > 100) {
+                alert("나이는 0이상 100이하만 입력 가능");
+                return;
+                }
+
+            const cells = editTarget.children;
+            cells[0].textContent = name;
+            cells[1].textContent = age;
+            cells[2].textContent = phone;
+
+             // 초기화
+            editTarget = null;
+            document.getElementById("editbox").style.display="none";
+        })
+
+    </script>
+</body>
+</html>
