@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+    </ul>
+    
+    <Script>
+        const htmlCollection = document.getElementsByTagName("li");
+        const nodeList = document.querySelectorAll("li");
+    
+        console.log(htmlCollection);
+        console.log(nodeList);
+    
+        // 반복
+        for (let item of htmlCollection) {
+            console.log(item.textContent);
+        }
+    
+        nodeList.forEach(node => console.log(node.textContent));
+    </Script>
+</body>
+</html>
