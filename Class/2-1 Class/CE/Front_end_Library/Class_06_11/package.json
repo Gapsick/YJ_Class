@@ -1,0 +1,15 @@
+{
+  "name": "class_06_11",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "parcel build index.html",
+    "dev": "parcel index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.15.2",
+    "parcel": "^2.15.2"
+  }
+}
