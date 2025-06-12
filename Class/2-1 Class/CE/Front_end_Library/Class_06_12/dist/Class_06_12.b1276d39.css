@@ -1,0 +1,117 @@
+.card-box {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  display: flex;
+}
+
+.card-container {
+  border: 1px solid #000;
+  width: 110px;
+  height: 150px;
+}
+
+.card-container .cardA {
+  background-image: url("cardDiamondsA.d196fa3e.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-container .card2 {
+  background-image: url("cardDiamonds2.75eae3a6.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-container .card3 {
+  background-image: url("cardDiamonds3.56823f40.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-container .card4 {
+  background-image: url("cardDiamonds4.02b31ecb.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-container .card5 {
+  background-image: url("cardDiamonds5.a1b35aba.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-container .card6 {
+  background-image: url("cardDiamonds6.4f7c0227.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-container .card7 {
+  background-image: url("cardDiamonds7.4e6fc609.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-container .card8 {
+  background-image: url("cardDiamonds8.635d3f1b.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-container .card9 {
+  background-image: url("cardDiamonds9.6065ad1c.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-container .card10 {
+  background-image: url("cardDiamonds10.63fff3a2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-container .cardJ {
+  background-image: url("cardDiamondsJ.6bdb0039.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-container .cardQ {
+  background-image: url("cardDiamondsQ.7c76c885.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-container .cardK {
+  background-image: url("cardDiamondsK.4712bb72.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+/*# sourceMappingURL=Class_06_12.b1276d39.css.map */
