@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>행성 거리</title>
 </head>
 <body>
-    <h1>이름과 나이 입력 하셈</h1>
-    <form action="userInfoProcess.php" method="post">
-        이름: <input type="text" name="user_name"><br>
-        나이: <input type="text" name="user_age">
-        <input type="submit" value="제출하기">
+    <form action="17.php" method="post">
+        <fieldset style="width:300px">
+            <legend>행성(Planet)을 선택 하세요!</legend>
+            <input type="checkbox" name="su">수성 <br>
+            <input type="checkbox" name="ji">지구 <br>
+            <input type="checkbox" name="wha">화성 <br>
+            <input type="submit" value="계산하기">
+        </fieldset>
     </form>
 </body>
 </html>

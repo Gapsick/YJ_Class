@@ -1,36 +1,22 @@
 <?php 
 
-// 변수 선언
-// 변수 자료형
-// 점근 범위
-// 생명 주기
+// $foo = 2;
 
-// hoisting
+// $bar = function () use ($foo) {
+//     echo"배고파<br>".$foo;
+// };
 
-// 변수의 접근 범위
-// 변수의 생명 주기
-// - 출생 - 소멸
-//   선언   전역, 지역
+// $foo = 10;
 
-$bar = "hello";
+// $bar();
 
-function foo() {
-    global $bar;
-    
-    print $bar;
-}
+function sum($a, $b) {
+    echo $a + $b;
+};
 
-foo();
+$test = "sum";
 
-
-
-// 자바 -> 블럭 기반
-// python -> 함수 기반
-// php -> 함수 기반
-
-
-
-
+$test(2, 3);
 
 
 ?>
