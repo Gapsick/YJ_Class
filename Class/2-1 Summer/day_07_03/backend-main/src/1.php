@@ -1,22 +1,34 @@
 <?php 
 
-// $foo = 2;
+function http_response_error($msg) {
+    http_response_code(400);
+    echo $msg."<br>";
+    exit;
+}
+// POST or GET 입력 값, 사용 전, 반드시 입력 값에 대한 검증이 필요하다
+if(!isset($_POST['id']) || !isset($_POST['pw'])) {
+    http_response_error("입력값을 확인하세요");
+}
 
-// $bar = function () use ($foo) {
-//     echo"배고파<br>".$foo;
-// };
+// 2. 문자열 전처리
+$id = trim($_POST['id']);
+$pw = trim($_POST['pw']);
 
-// $foo = 10;
+// 3. option : 각 필드별 특성 처리
+if(!is_numeric($pw)) {
+    http_response_error("패스워드는 숫자로 구성됩니다.");
+}
 
-// $bar();
+if($id == '') {
+    http_response_error("id를 입력하세요");
+}
 
-function sum($a, $b) {
-    echo $a + $b;
-};
+var_dump($_POST);
 
-$test = "sum";
 
-$test(2, 3);
+echo "입력값 검증 완료";
+
+
 
 
 ?>

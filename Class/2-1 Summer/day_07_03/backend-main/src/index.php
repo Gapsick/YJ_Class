@@ -7,10 +7,11 @@
   </head>
   <body>
 
-    <?php 
-      echo "<h1 style='color:red'>hello</h1>";
-      echo "<h1 style='color:green'>hello</h1>";
-    ?>
+  <form action="http://localhost/1.php" method="post">
+    ID: <input type="text" name=id><br>
+    PW: <input type="text" name=pw><br>
+    <input type="submit" value="전송">
+  </form>
 
 
   </body>
