@@ -1,0 +1,6 @@
+<?php 
+setcookie('name', 'seongsik');
+
+
+
+?>
