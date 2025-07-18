@@ -42,13 +42,7 @@ if ($result) {
     echo "<hr><br>레코드 생성 성공<br><hr>";
 } else {
     echo "<hr><br>레코드 생성 실패<br><hr>";
-}
-
-
-
-
-
-
+};
 
 // 4번 작업: 연결 종료
 $db_conn->close();
