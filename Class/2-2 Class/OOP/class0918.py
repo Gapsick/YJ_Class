@@ -32,7 +32,8 @@ class Bar:
 
 class Parent:
     def prt_name(self):
-        print(self.name)
+        # print(self.name)
+        pass
 
 class Child (Parent):
     def __init__(self):
@@ -46,7 +47,8 @@ class Bar1:
         self.name = "YC Jung"
     
     def prt_info(self):
-        print(self.name, self.age)
+        # print(self.name, self.age)
+        pass
 
 class Foo(Bar1):
     def __init__(self):
